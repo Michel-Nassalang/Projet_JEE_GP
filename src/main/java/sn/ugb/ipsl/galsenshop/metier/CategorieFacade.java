@@ -36,4 +36,5 @@ public class CategorieFacade extends AbstractFacade<Categorie>{
         q.setMaxResults(taille);
         return q.getResultList();
     }
+    
 }

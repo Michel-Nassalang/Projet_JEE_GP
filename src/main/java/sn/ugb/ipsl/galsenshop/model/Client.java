@@ -5,11 +5,14 @@
 package sn.ugb.ipsl.galsenshop.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -20,12 +23,18 @@ public class Client implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idclient;
     private String prenom;
     private String nom;
     private String adresse;
     private String telephone;
+    
+    @OneToMany(mappedBy="client")
+    private List<Facture> factures;
+    
+    @ManyToMany(mappedBy="clients")
+    private List<Article> articles;
 
     public Integer getIdclient() {
         return idclient;
@@ -67,6 +76,23 @@ public class Client implements Serializable {
         this.telephone = telephone;
     }
 
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
+    public List<Facture> getFactures() {
+        return factures;
+    }
+
+    public void setFactures(List<Facture> factures) {
+        this.factures = factures;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;

@@ -1,11 +1,15 @@
+C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\ClientFacade.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\InitCategorie.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\model\Client.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\JakartaRestConfiguration.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\resources\JakartaEE8Resource.java
-C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\model\Categorie.java
+C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\CaissierFacade.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\CategorieFacade.java
-C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\StartApp.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\model\Article.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\model\Caissier.java
+C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\ArticleFacade.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\AbstractFacade.java
+C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\model\Categorie.java
+C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\StartApp.java
+C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\metier\FactureFacade.java
 C:\Users\Miki_Biboy\Documents\NetBeansProjects\galsenshop\src\main\java\sn\ugb\ipsl\galsenshop\model\Facture.java

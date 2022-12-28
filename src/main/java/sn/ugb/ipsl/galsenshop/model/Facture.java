@@ -5,11 +5,14 @@
 package sn.ugb.ipsl.galsenshop.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -20,14 +23,20 @@ public class Facture implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idfacture;
-    private String nom;
     private Integer nbproduits;
     private Float montantHT;
     private Float tva;
     private Float montantTTC;
     private String date;
+    @ManyToOne
+    private Client client;
+    @ManyToOne
+    private Caissier caissier;
+    
+    @ManyToMany(mappedBy="factures")
+    private List<Article> articles;
 
     public Integer getIdfacture() {
         return idfacture;
@@ -35,14 +44,6 @@ public class Facture implements Serializable {
 
     public void setIdfacture(Integer idfacture) {
         this.idfacture = idfacture;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
     }
 
     public Integer getNbproduits() {
@@ -84,6 +85,32 @@ public class Facture implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public Caissier getCaissier() {
+        return caissier;
+    }
+
+    public void setCaissier(Caissier caissier) {
+        this.caissier = caissier;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+    
+    
 
     @Override
     public int hashCode() {

@@ -22,21 +22,24 @@ public class InitCategorie {
 
     @EJB
     private  CategorieFacade categorieFacade;
+    
    
     @PostConstruct
-    public void initialEtudiants(){
+    public void initialCategorie(){
         System.out.println("#### Initialisation des categories ####");
         System.out.println("#### Nombre de categorie dans la base " + categorieFacade.count() + " ####");
         if(categorieFacade.count()==0){
-            Categorie c1 = new Categorie(1, "Sac", "SAc de qualite avec des trousses et de nombreuses poches", 6.5);
+            Categorie c1 = new Categorie("BSE", "biens sociaux essentiels", "les médicaments, appareils médico-chirurgicaux, le papier journal, les livres, les journaux, les fauteuils roulants, certains engrais etc.");
             categorieFacade.create(c1);
-            Categorie c2 = new Categorie(2,"Sous Vetements", "Fait avec un tissu en coton léger", 10.45);
+            
+            Categorie c2 = new Categorie("BPN","biens de première nécessité","les matières premières de base, les biens d’équipement et les intrants spécifiques.",5);
             categorieFacade.create(c2);
             
-            for (int i = 3; i < 10; i++) {
-                Categorie cat = new Categorie(i,"Nom"+i,"Description"+i, 3.5+i);
-                categorieFacade.create(cat);
-            }
+            Categorie c3 = new Categorie("IPI","intrants et produits intermédiaires","",10);
+            categorieFacade.create(c3);
+            
+            Categorie c4 = new Categorie("BCF","biens de consommation finale","catégorie par defaut", 20);
+            categorieFacade.create(c4);
         }
     }
 }

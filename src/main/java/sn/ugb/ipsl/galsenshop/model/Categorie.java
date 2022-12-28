@@ -5,6 +5,7 @@
 package sn.ugb.ipsl.galsenshop.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 
 /**
  *
@@ -29,8 +32,11 @@ public class Categorie implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer code_categorie;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id; 
+    
+    @Column(nullable=false)
+    private String code_categorie;
     
     @Column(nullable=false)
     private String nom;
@@ -38,17 +44,36 @@ public class Categorie implements Serializable {
     @Column(nullable=true)
     private String description;
     
-    @Column(nullable=false)
-    private double taux_tva;
-
+    
+    private Integer taux_tva;
+    
+    @OneToMany(mappedBy="categorie")
+    private List<Article> articles;
+    
+    @PrePersist // fonction pour initialiser le taux tva à 7% si elle n'est pas renseigné
+    public void callBackTva(){
+        if(this.taux_tva==null){
+            this.taux_tva = 7;
+        }
+    }
+    
     public Categorie() {
     }
+    
 
-    public Integer getCode_categorie() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCode_categorie() {
         return code_categorie;
     }
 
-    public void setCode_categorie(Integer code_categorie) {
+    public void setCode_categorie(String code_categorie) {
         this.code_categorie = code_categorie;
     }
 
@@ -68,25 +93,41 @@ public class Categorie implements Serializable {
         this.description = description;
     }
 
-    public double getTaux_tva() {
+    public Integer getTaux_tva() {
         return taux_tva;
     }
 
-    public void setTaux_tva(Float taux_tva) {
+    public void setTaux_tva(Integer taux_tva) {
         this.taux_tva = taux_tva;
     }
 
-    public Categorie(Integer code_categorie, String nom, String description, double taux_tva) {
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
+    public Categorie(String code_categorie, String nom, String description, Integer taux_tva) {
         this.code_categorie = code_categorie;
         this.nom = nom;
         this.description = description;
         this.taux_tva = taux_tva;
     }
+
+    public Categorie(String code_categorie, String nom, String description) {
+        this.code_categorie = code_categorie;
+        this.nom = nom;
+        this.description = description;
+    }
     
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 73 * hash + Objects.hashCode(this.code_categorie);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.code_categorie);
         return hash;
     }
 
@@ -102,8 +143,13 @@ public class Categorie implements Serializable {
             return false;
         }
         final Categorie other = (Categorie) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
         return Objects.equals(this.code_categorie, other.code_categorie);
     }
+    
+    
     
     
     

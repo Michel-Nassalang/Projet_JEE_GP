@@ -5,11 +5,13 @@
 package sn.ugb.ipsl.galsenshop.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -20,11 +22,14 @@ public class Caissier implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer matricule;
     private String prenom;
     private String nom;
     private String date;
+    
+    @OneToMany(mappedBy="caissier")
+    private List<Facture> factures;
 
     public Integer getMatricule() {
         return matricule;
@@ -57,6 +62,15 @@ public class Caissier implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public List<Facture> getFactures() {
+        return factures;
+    }
+
+    public void setFactures(List<Facture> factures) {
+        this.factures = factures;
+    }
+    
 
     @Override
     public int hashCode() {

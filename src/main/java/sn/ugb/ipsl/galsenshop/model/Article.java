@@ -5,11 +5,14 @@
 package sn.ugb.ipsl.galsenshop.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -20,13 +23,21 @@ public class Article implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer code_article;
     private String libelle;
     private String description;
     private Integer prix_unitaire;
     private Integer unite_mesure;
     private Integer stock;
+    @ManyToOne
+    private Categorie categorie;
+    
+    @ManyToMany
+    List<Client> clients;
+    
+    @ManyToMany
+    List<Facture> factures;
 
     public Integer getCode_article() {
         return code_article;
@@ -74,6 +85,30 @@ public class Article implements Serializable {
 
     public void setStock(Integer stock) {
         this.stock = stock;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
+
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
+    }
+
+    public List<Facture> getFactures() {
+        return factures;
+    }
+
+    public void setFactures(List<Facture> factures) {
+        this.factures = factures;
     }
 
     @Override

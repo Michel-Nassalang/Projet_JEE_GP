@@ -4,10 +4,26 @@
  */
 package sn.ugb.ipsl.galsenshop.metier;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import sn.ugb.ipsl.galsenshop.model.Facture;
+
 /**
  *
  * @author Miki_Biboy
  */
-public class FactureFacade {
+public class FactureFacade extends AbstractFacade<Facture>{
+    @PersistenceContext(unitName = "galsenShopPU")
+    private EntityManager em;
+
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
+    }
+
+    public FactureFacade() {
+        super(Facture.class);
+    }
+    
     
 }

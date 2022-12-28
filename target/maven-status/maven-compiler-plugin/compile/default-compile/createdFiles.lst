@@ -1,0 +1,16 @@
+sn\ugb\ipsl\galsenshop\model\Facture.class
+sn\ugb\ipsl\galsenshop\metier\CategorieFacade.class
+sn\ugb\ipsl\galsenshop\model\Categorie_.class
+sn\ugb\ipsl\galsenshop\model\Caissier_.class
+sn\ugb\ipsl\galsenshop\metier\AbstractFacade.class
+sn\ugb\ipsl\galsenshop\model\Caissier.class
+sn\ugb\ipsl\galsenshop\metier\StartApp.class
+sn\ugb\ipsl\galsenshop\resources\JakartaEE8Resource.class
+sn\ugb\ipsl\galsenshop\model\Categorie.class
+sn\ugb\ipsl\galsenshop\model\Client_.class
+sn\ugb\ipsl\galsenshop\JakartaRestConfiguration.class
+sn\ugb\ipsl\galsenshop\model\Article.class
+sn\ugb\ipsl\galsenshop\model\Article_.class
+sn\ugb\ipsl\galsenshop\metier\InitCategorie.class
+sn\ugb\ipsl\galsenshop\model\Client.class
+sn\ugb\ipsl\galsenshop\model\Facture_.class

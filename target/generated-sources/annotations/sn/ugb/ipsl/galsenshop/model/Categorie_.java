@@ -6,7 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import sn.ugb.ipsl.galsenshop.model.Article;
 
-@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2022-12-28T22:15:15")
+@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2022-12-29T14:57:15")
 @StaticMetamodel(Categorie.class)
 public class Categorie_ { 
 

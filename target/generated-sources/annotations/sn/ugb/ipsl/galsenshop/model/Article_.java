@@ -8,7 +8,7 @@ import sn.ugb.ipsl.galsenshop.model.Categorie;
 import sn.ugb.ipsl.galsenshop.model.Client;
 import sn.ugb.ipsl.galsenshop.model.Facture;
 
-@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2022-12-28T22:15:15")
+@Generated(value="EclipseLink-2.7.10.v20211216-rNA", date="2022-12-29T14:57:15")
 @StaticMetamodel(Article.class)
 public class Article_ { 
 
